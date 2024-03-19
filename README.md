@@ -6,6 +6,12 @@ use python create tool
 
 ## os.py test.py
 os.py write code into test.py , then run test.py
+## sys_argv.py
+test input use sys_argv
+
+# decorator 
+## decorator.py 
+decorator test case
 
 # unittest
 unittest 套件範例
