@@ -14,8 +14,12 @@ unittest 套件範例
 
 # google_search_img.py
 google圖片 搜尋並下載圖片
+* use chromedriver
 
-程式開始:
+#### record 
+2024/3/19 修改timeoutexception 重新啟動
+
+## 程式開始:
 input : key(搜尋關鍵字)、 crab_num(指定抓取的數量)
 output : 在電腦路徑底下，建立img資料夾並且儲存圖片
 
@@ -36,6 +40,8 @@ GoogleSearchImg (class)
 * crab : 確認爬取數量已經滿足需求，開始爬取url 並且 download 
 * download : 從url中，下載圖片
 * no_search_result : 是否有搜尋結果，True or False
+
+
 
 
 

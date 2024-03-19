@@ -45,14 +45,14 @@ class GoogleSearchImg():
             
         except TimeoutException:
             self.quit()
-            os.system("python google_search_img.py")
+            os.system("python google_search_img.py {} {}".format(key,crab_num))
             sys.exit()
 
         next = True
         while next:
-            next = self.more_result()
+            next = self.more_result(crab_num)
 
-    def more_result(self): #更多結果
+    def more_result(self,crab_num): #更多結果
         
         try:      #尋找有無其餘搜尋結果
             other_result_none = self.browser.find_element(By.CLASS_NAME,"w9dUj")   
@@ -134,8 +134,13 @@ class GoogleSearchImg():
                 return True
             
 if __name__ == "__main__":
-    key = input("請輸入想要搜尋的關鍵字: ")
-    crab_num = int(input("請輸入想要下載幾張照片: "))
+    if len(sys.argv) == 3:
+        key = sys.argv[1]
+        crab_num = int(sys.argv[2])
+    else:
+        key = input("請輸入想要搜尋的關鍵字: ")
+        crab_num = int(input("請輸入想要下載幾張照片: "))
+    
     start = time.time()
     google_img = GoogleSearchImg()
     google_img.search(key,crab_num)
