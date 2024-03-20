@@ -46,6 +46,8 @@ GoogleSearchImg (class)
 * crab : 確認爬取數量已經滿足需求，開始爬取url 並且 download 
 * download : 從url中，下載圖片
 * no_search_result : 是否有搜尋結果，True or False
+* safe_search: 關閉安全模式
+
 
 
 

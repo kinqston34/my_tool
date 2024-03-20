@@ -48,6 +48,8 @@ class GoogleSearchImg():
             os.system("python google_search_img.py {} {}".format(key,crab_num))
             sys.exit()
 
+        self.safe_search()
+
         next = True
         while next:
             next = self.more_result(crab_num)
@@ -133,6 +135,16 @@ class GoogleSearchImg():
             if no_result.text == "沒有相符的搜尋結果":
                 return True
             
+    def safe_search(self):
+
+        self.browser.find_element(By.CLASS_NAME,"G2XB8d").click()
+        
+        self.browser.find_elements(By.CSS_SELECTOR,"g-menu-item div[jsname='ibnC6b'] a")[-2].click()
+
+        WebDriverWait(self.browser, 10).until(                      
+                    expected_conditions.presence_of_element_located((By.CSS_SELECTOR,"img.Q4LuWd"))
+                )
+
 if __name__ == "__main__":
     if len(sys.argv) == 3:
         key = sys.argv[1]
