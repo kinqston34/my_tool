@@ -112,7 +112,13 @@ GoogleSearchImg (class)
 程式進入點
 
 
+# learning 
+放練習檔案
+* asynic_example.py 模組練習
 
+
+# fb.py 
+製作中 臉書發文 (未完成)
 
 
 
